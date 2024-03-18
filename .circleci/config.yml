@@ -13,7 +13,7 @@ jobs:
       - run:
           name: Build Docker image
           command: |
-            docker login victoria68 -u USERNAME -p $PASSWORD
+            docker login
             docker build -t test-application .
 
   deploy:
