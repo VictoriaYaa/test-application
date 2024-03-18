@@ -1,9 +1,9 @@
 name: application-test-app
-region: fra1
 services:
-- environment_slug: html
-  dockerfile_path: ./
-  image: victoria68/test-application:latest
-  http_port: 8080
-  name: application-test-app-service
-  source_dir: /
+- name: web
+  image:
+    registry_type: DOCKER_HUB
+    registry: victoria68
+    repository: test-application
+    registry_credentials: "dockerhub_user:$dockerhub_password"
+    digest: sha256:3d6f7a362d1b34e07afa76b39c0d07165e177bf8ef8cb137ca9d49a574911d82
