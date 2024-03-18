@@ -6,4 +6,3 @@ services:
     registry: victoria68
     repository: test-application
     registry_credentials: "dockerhub_user:$dockerhub_password"
-    digest: sha256:3d6f7a362d1b34e07afa76b39c0d07165e177bf8ef8cb137ca9d49a574911d82
