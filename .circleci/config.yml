@@ -33,7 +33,7 @@ jobs:
       - run:
           name: Login To DockerHub
           command: |
-            docker login --username="$dockerhub_user" --email="$dockerhub_email"
+            docker login --username="$dockerhub_user" --password="$dockerhub_password"
 
       - run:
           name: Push Docker image to DockerHub
