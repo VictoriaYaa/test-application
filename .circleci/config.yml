@@ -71,11 +71,6 @@ jobs:
           command: |
             doctl apps create --spec app.yml
 
-      - run:
-          name: Deploy App To DigitalOcean
-          command: |
-            doctl apps deploy test-application-app
-
 
 workflows:
   version: 2
