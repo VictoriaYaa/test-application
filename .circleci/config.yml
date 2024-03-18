@@ -37,8 +37,8 @@ jobs:
       - run:
           name: Push Docker image to Heroku
           command: |
-            docker tag test-application registry.heroku.com/your-heroku-app/web
-            docker push registry.heroku.com/your-heroku-app/web
+            docker tag test-application registry.heroku.com/victoria/web
+            docker push registry.heroku.com/victoria/web
 
 workflows:
   version: 2
