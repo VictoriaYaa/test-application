@@ -26,29 +26,20 @@ jobs:
 
     steps:
       - checkout
-      
+
       - setup_remote_docker:
           docker_layer_caching: true
 
       - run:
-          name: Install Heroku CLI
+          name: Login To DockerHub
           command: |
-            curl https://cli-assets.heroku.com/install.sh | sh
+            docker login --username="$dockerhub_user" --email="$dockerhub_email"
 
       - run:
-          name: Log in to Heroku
+          name: Push Docker image to DockerHub
           command: |
-            echo "machine api.heroku.com" >> ~/.netrc
-            echo "  login $HEROKU_EMAIL" >> ~/.netrc
-            echo "  password $HEROKU_API_KEY" >> ~/.netrc
-            chmod 600 ~/.netrc
-            heroku container:login
-
-      - run:
-          name: Push Docker image to Heroku
-          command: |
-            docker tag test-application registry.heroku.com/test-application/web
-            docker push registry.heroku.com/test-application/web
+            docker tag test-application victoria68/test-application
+            docker push victoria68/test-application
 
 workflows:
   version: 2
