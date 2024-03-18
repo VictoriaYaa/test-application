@@ -1,7 +1,7 @@
 name: application-test-app
 region: fra1
 services:
-- environment_slug: go
+- environment_slug: html
   dockerfile_path: ./
   image: victoria68/test-application:latest
   http_port: 8080
