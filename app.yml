@@ -3,7 +3,7 @@ region: fra1
 services:
 - name: test-application-app
   source_dir: ./
-  dockerfile_path: Dockerfile
+  image: victoria68/test-application:latest
   routes:
       - path: /
       - path: /api
