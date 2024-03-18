@@ -13,7 +13,7 @@ jobs:
       - run:
           name: Build Docker image
           command: |
-            docker login
+            docker login --username="$dockerhub_user" -p "$dockerhub_password"
             docker build -t test-application .
 
   deploy:
@@ -38,8 +38,9 @@ jobs:
       - run:
           name: Push Docker image to Heroku
           command: |
-            docker tag test-application registry.heroku.com/victoria/web
-            docker push registry.heroku.com/victoria/web
+            docker login --username=victoria68
+            docker tag test-application registry.heroku.com/test-application/web
+            docker push registry.heroku.com/test-application/web
 
 workflows:
   version: 2
