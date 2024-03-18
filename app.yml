@@ -1,0 +1,10 @@
+name: application-test-app
+region: fra1
+services:
+- name: test-application-app
+  source_dir: ./
+  dockerfile_path: Dockerfile
+  deploy_on_push: true
+  routes:
+      - path: /
+      - path: /api
