@@ -1,9 +1,24 @@
+ingress:
+  rules:
+  - component:
+      name: api
+    match:
+      path:
+        prefix: /api
+  - component:
+      name: website
+    cors:
+      allow_origins:
+      - prefix: https://internal.example-app.com
+    match:
+      path:
+        prefix: /
 name: application-test-app
 region: fra1
 services:
-- name: test-application-app
-  source_dir: ./
+- environment_slug: go
+  dockerfile_path: ./
   image: victoria68/test-application:latest
-  routes:
-      - path: /
-      - path: /api
+  http_port: 8080
+  name: application-test-app-service
+  source_dir: /
