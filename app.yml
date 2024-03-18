@@ -5,4 +5,4 @@ services:
     registry_type: DOCKER_HUB
     registry: victoria68
     repository: test-application
-    registry_credentials: "dockerhub_user:$dockerhub_password"
+    registry_credentials: $dockerhub_user:$dockerhub_password
