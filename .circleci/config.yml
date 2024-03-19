@@ -69,7 +69,7 @@ jobs:
       - run:
           name: Deploy App to DigitalOcean
           command: |
-            doctl apps list
+            doctl apps create-deployment 4f903055-ec61-4d00-9118-22f724077c31
 
 
 workflows:
