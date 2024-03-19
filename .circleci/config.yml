@@ -67,9 +67,9 @@ jobs:
             doctl auth init -t $digital_ocean_api_token
 
       - run:
-          name: Create App in DigitalOcean
+          name: Deploy App to DigitalOcean
           command: |
-            doctl apps create --spec app.yml
+            doctl apps create-deployment application-test-app-nleb4
 
 
 workflows:
