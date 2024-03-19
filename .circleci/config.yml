@@ -69,7 +69,7 @@ jobs:
       - run:
           name: Deploy App to DigitalOcean
           command: |
-            doctl apps create-deployment application-test-app-nleb4
+            doctl apps create-deployment $(doctl apps list)
 
 
 workflows:
